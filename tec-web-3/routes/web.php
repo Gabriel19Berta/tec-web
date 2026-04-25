@@ -13,5 +13,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 require __DIR__.'/settings.php';
 
+Route::get('/novo/', function(){
+    return view('novo');
+});
+
+
 
 Route::resource('/user', App\Http\Controllers\UserController::class);
+Route::get('/usuarios', [UserController::class, 'index']);
