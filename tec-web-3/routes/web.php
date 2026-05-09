@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
+use App\Http\Controllers\UserController;
 
 Route::inertia('/', 'welcome', [
     'canRegister' => Features::enabled(Features::registration()),
@@ -17,6 +18,7 @@ Route::get('/novo/', function(){
     return view('novo');
 });
 
+Route::get('/usuarios', [UserController::class, 'index']);
 
 
 Route::resource('/user', App\Http\Controllers\UserController::class);
