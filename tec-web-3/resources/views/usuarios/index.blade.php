@@ -16,8 +16,8 @@
                 <td>{{ $user["name"] }}</td>
                 <td>{{ $user["email"] }}</td>
                 <td>
-                    <a href="{{ route('/usuarios.show', $user->id) }}" class="btn btn-info">
-                        visualizar
+                    <a href="{{ route('usuarios.show', $user->id) }}">
+                        <p>visualizar</p>
                     </a>
                 </td>
             </tr>
