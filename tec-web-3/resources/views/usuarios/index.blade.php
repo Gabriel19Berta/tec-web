@@ -15,11 +15,6 @@
             <tr>
                 <td>{{ $user["name"] }}</td>
                 <td>{{ $user["email"] }}</td>
-                <td>
-                    <a href="{{ route('usuarios.show', $user->id) }}">
-                        <p>visualizar</p>
-                    </a>
-                </td>
             </tr>
         @endforeach
     </table>

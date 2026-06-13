@@ -16,6 +16,20 @@ class UserController extends Controller
         return view('usuarios.index')->with('users', $users);
     }
 
+    public function mostraPlano(string $id)
+    {
+        $usuario = User::findOrFail($id);
+
+        return view('usuarios.plano')->with('usuario', $usuario);
+    }
+
+    public function alteraPlanos(Request $request, User $user)
+    {
+        $user->update(['plano' => $request->plano]);
+
+        return redirect()->back()->with('status', 'ok');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

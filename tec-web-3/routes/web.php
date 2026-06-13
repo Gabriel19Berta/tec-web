@@ -19,7 +19,7 @@ Route::get('/novo/', function(){
 });
 
 Route::get('/usuarios', [UserController::class, 'index']);
-Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('usuarios.show');
-
+Route::get('/usuarios/plano/{id}', [UserController::class, 'mostraPlano']);
+Route::post('/usuarios/plano/{id}', [UserController::class, 'alteraPlanos'])->name('usuario.plano');
 
 Route::resource('/user', App\Http\Controllers\UserController::class);
