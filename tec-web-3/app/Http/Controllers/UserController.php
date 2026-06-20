@@ -23,11 +23,13 @@ class UserController extends Controller
         return view('usuarios.plano')->with('usuario', $usuario);
     }
 
-    public function alteraPlanos(Request $request, User $user)
-    {
+    public function alteraPlanos(Request $request, $id)
+    { 
+        $user = User::findOrFail($id);
+
         $user->update(['plano' => $request->plano]);
 
-        return redirect()->back()->with('status', 'ok');
+        return redirect()->route('usuarios.index')->with('status', 'ok');
     }
 
     /**
